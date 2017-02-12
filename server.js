@@ -130,7 +130,7 @@ function sensible_ip() {
 
 
 function main() {
-	const ip = process.argv[1] ? process.argv[2] : "0.0.0.0"
+	const ip = process.argv[2] ? process.argv[2] : "0.0.0.0"
 	Serve("./", ip, 8000)
 	WebSocketServer(ip, 8001) }
 
