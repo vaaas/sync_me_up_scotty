@@ -3,7 +3,6 @@
 	"description": "video syncing for watching movies with friends",
 	"bugs": { "url": "https://github.com/vaaas/sync_me_up_scotty/issues" },
 	"license": "WTFPL",
-	"files": ["bin", "static", "templates"],
 	"main": "server.js",
 	"dependencies": {
 		"uws": "*",
