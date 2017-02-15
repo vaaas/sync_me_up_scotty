@@ -15,7 +15,15 @@ function forEach (arr, fn) {
 		fn(arr[i], i, len) }
 
 function file_selected (e) {
-	elems.video.innerHTML = `<source src="${URL.createObjectURL(e.target.files[0])}"/>` }
+	const a = document.createElement("source")
+	a.src = URL.createObjectURL(e.target.files[0])
+	elems.video.appendChild(a) }
+
+function subs_selected (e) {
+	const a = document.createElement("track")
+	a.kind = "subtitles"
+	a.src = URL.createObjectURL(e.target.files[0])
+	elems.video.appendChild(a) }
 
 function sync_pressed (e) {
 	send(ws, RPC("sync")) }
@@ -64,10 +72,12 @@ window.onkeypress = key_pressed
 
 const elems = {
 	file: $("#file"),
+	subs: $("#subs"),
 	sync: $("#sync"),
 	video: $("video") }
 
 elems.file.onchange = file_selected
+elems.subs.onchange = subs_selected
 elems.sync.onclick = sync_pressed
 
 const ws = new WebSocket("ws://" + window.location.hostname + ":8001")
