@@ -2,7 +2,7 @@
 	"name": "sync_me_up_scotty",
 	"description": "video syncing for watching movies with friends",
 	"bugs": { "url": "https://github.com/vaaas/sync_me_up_scotty/issues" },
-	"license": "WTFPL",
+	"license": "AGPL-3.0",
 	"main": "server.js",
 	"dependencies": {
 		"uws": "*",
